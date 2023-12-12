@@ -9,9 +9,14 @@ def concatenate(x:str, y:str):
 
 def string_from_list(lst:list):
     if not isinstance(lst, list):
-        raise ValueError('Argument must be of type string.')
-    result = ''.join(lst)
-    return f"Result of creating string from list '{lst}' is {result}"
+        raise ValueError('Argument must be of type list.')
+    try :
+        result = ''.join(lst)
+        return f"Result of creating string from list '{lst}' is {result}"
+    except:
+        raise TypeError('The list must contain only string')
+        
+    
 
 
 def check_numeric_string_at_least_one(txt):
@@ -27,4 +32,5 @@ def check_numeric_string_at_least_one(txt):
     else:
         return result
 
-
+lst = [1, 'fasd', 'd']
+string_from_list(lst)
